@@ -29,4 +29,16 @@ class MoodAnalyserTest {
             System.out.println(MoodAnalyser.display.HAPPY);
         }
     }
+
+    @Test
+    void givenMassage_ContainNull_ReturnHappy() {
+        MoodAnalyser moodAnalyser1 = new MoodAnalyser("");
+        boolean result = moodAnalyser1.analyseMood1();
+        if(result == true){
+            System.out.println(MoodAnalyser.display.SAD);
+        }
+        else {
+            System.out.println(MoodAnalyser.display.HAPPY);
+        }
+    }
 }
