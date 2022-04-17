@@ -17,7 +17,7 @@ class MoodAnalyserTest {
         }
     }
 
-    @Test
+    /*@Test
     void givenMessage_NotContainSad_Return_Happy() {
         boolean result = moodAnalyser.analyseMood("I am in Any Mood");
         if(result == true){
@@ -26,5 +26,5 @@ class MoodAnalyserTest {
         else {
             System.out.println(MoodAnalyser.display.HAPPY);
         }
-    }
+    }*/
 }
