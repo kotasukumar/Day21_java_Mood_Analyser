@@ -11,34 +11,45 @@ class MoodAnalyserTest {
         MoodAnalyser moodAnalyser = new MoodAnalyser();
         boolean result = moodAnalyser.analyseMood("I am in Sad Mood");
         if(result == true){
-            System.out.println(MoodAnalyser.display.SAD);
+            System.out.println(MoodAnalyserException.Display.SAD);
         }
         else {
-            System.out.println(MoodAnalyser.display.HAPPY);
+            System.out.println(MoodAnalyserException.Display.HAPPY);
         }
     }
 
     @Test
     void givenMessage_NotContainSad_Return_Happy() {
         MoodAnalyser moodAnalyser1 = new MoodAnalyser("I am in Any Mood");
-        boolean result = moodAnalyser1.analyseMood1();
+        boolean result = moodAnalyser1.analyseMood("I am in Any Mood");
         if(result == true){
-            System.out.println(MoodAnalyser.display.SAD);
+            System.out.println(MoodAnalyserException.Display.SAD);
         }
         else {
-            System.out.println(MoodAnalyser.display.HAPPY);
+            System.out.println(MoodAnalyserException.Display.HAPPY);
         }
     }
 
     @Test
     void givenMassage_ContainNull_ReturnHappy() {
-        MoodAnalyser moodAnalyser1 = new MoodAnalyser("");
-        boolean result = moodAnalyser1.analyseMood1();
+        MoodAnalyser moodAnalyser1 = new MoodAnalyser();
+        boolean result = moodAnalyser1.analyseMood1("");
         if(result == true){
-            System.out.println(MoodAnalyser.display.SAD);
+            System.out.println(MoodAnalyserException.Display.SAD);
         }
         else {
-            System.out.println(MoodAnalyser.display.HAPPY);
+            System.out.println(MoodAnalyserException.Display.HAPPY);
+        }
+    }
+
+    @Test
+    void givenMessage_containNull_ReturnCustomException () throws MoodAnalyserException {
+        MoodAnalyser moodAnalyser1 = new MoodAnalyser();
+//        boolean result = moodAnalyser1.analyseMood1();
+        try{
+            moodAnalyser1.analyseMood1(null);
+        }catch (NullPointerException e){
+            throw new MoodAnalyserException("Null please enter valid input");
         }
     }
 }

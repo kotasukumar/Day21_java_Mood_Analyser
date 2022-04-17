@@ -1,7 +1,7 @@
 package com.company;
 
 public class MoodAnalyser {
-    enum display {HAPPY , SAD}
+//    enum display {HAPPY , SAD, IT_IS_NULL, IT_IS_EMPTY, INVALID_INPUT}
     String message;
 
     public MoodAnalyser(){
@@ -14,7 +14,7 @@ public class MoodAnalyser {
         return message.contains("Sad");
     }
 
-    public boolean analyseMood1(){
-        return message.contains("Sad");
+    public boolean analyseMood1(String message){
+        return message.equals(null);
     }
 }
